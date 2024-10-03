@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+ext {
+    support_lib_version = '27.1.1'
+    build_tool_version = '30.0.3'
+
+
+    min_sdk_version = 21
+    target_sdk_version = 30
+    compile_sdk_version = 30
+
+    appcompatV7="com.android.support:appcompat-v7:${support_lib_version}"
+    gson="com.google.code.gson:gson:2.8.0"
+    typeBuilder="com.github.ikidou:TypeBuilder:1.0"
+    libNet="'com.github.AndroidLee0316:zxs_net:support_2.0.0"
+    guava="com.google.guava:guava:19.0"
+}
